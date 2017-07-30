@@ -14,7 +14,7 @@ namespace LuckyLottery
     {
         ArrayList mRawData = new ArrayList();
         ArrayList mQuestResult = new ArrayList();
-
+        String mFilePath = Application.StartupPath + @"\666.txt";
         public Form1()
         {
             InitializeComponent();
@@ -36,10 +36,9 @@ namespace LuckyLottery
             mQuestResult.Clear();
 
             string line = "";
-            string file_path = Application.StartupPath + @"\666.txt";
 
             // Read the file and display it line by line.
-            StreamReader sr = new StreamReader(file_path);
+            StreamReader sr = new StreamReader(mFilePath);
             while ((line = sr.ReadLine()) != null)
             {
                 char[] delimiterChars = { ' ' };
@@ -49,25 +48,25 @@ namespace LuckyLottery
 
             sr.Close();
 
-            // UI Setting
-            DisplayListView(_LvRawData, mRawData, _RbSize.Checked);
-            _LvRawData.Items[_LvRawData.Items.Count - 1].EnsureVisible();
+            if (mRawData.Count > 0)
+            {
+                // UI Setting
+                DisplayListView(_LvRawData, mRawData, _RbSize.Checked);
+                _LvRawData.Items[_LvRawData.Items.Count - 1].EnsureVisible();
 
-            // Enable button
-            _BtnQuery.Enabled = true; 
-            _BtnSaveFile.Enabled = false;
-            _BtnDeleteItem.Enabled = true;
-            _BtnColored.Enabled = false;
-            _BtnDecrease.Enabled = false;
-            _BtnIncrease.Enabled = false;
+                // Enable button
+                _BtnQuery.Enabled = true;
+                _BtnSaveFile.Enabled = false;
+                _BtnDeleteItem.Enabled = true;
+                _BtnColored.Enabled = false;
+                _BtnDecrease.Enabled = false;
+                _BtnIncrease.Enabled = false;
+            }
         }
 
         private void SaveFileBtn_Click(object sender, EventArgs e)
         {
-            string file_path = Application.StartupPath + @"\667.txt";
-
-            // Read the file and display it line by line.
-            StreamWriter sw = new StreamWriter(file_path);
+            StreamWriter sw = new StreamWriter(mFilePath);
             for (int i = 0; i < mRawData.Count; i++)
             {
                 string[] words = (string[])mRawData[i];
@@ -112,6 +111,7 @@ namespace LuckyLottery
                         num_data[j] = Convert.ToInt32(words2[j+2]);
                     }
 
+                    //тㄢ计常Τ瞷魁
                     if (Array.IndexOf(num_data, Convert.ToInt32(_TbNumOne.Text)) != -1 && Array.IndexOf(num_data,  Convert.ToInt32(_TbNumTwo.Text)) != -1)
                     {
                         int down_count = Convert.ToInt32(_TbNumThree.Text);
@@ -160,7 +160,7 @@ namespace LuckyLottery
 
                 _LbResultDescr.Text = "计 " + _TbNumOne.Text + "  计 " + _TbNumTwo.Text + "\n┕计" + _TbNumThree.Text+"";
                 _LbResultPredict.Text = _LvResultData.Items.Count.ToString() + "Ωい瞷程玡ㄢ\n" + 
-                    major_index.ToString() + "瞷 " + major_value.ToString() + "Ω  " + 
+                    major_index.ToString() + "瞷 " + major_value.ToString() + "Ω\n" + 
                     minor_index.ToString() + "瞷 " + minor_value.ToString() + "Ω";
             }
         }
@@ -193,8 +193,9 @@ namespace LuckyLottery
         private void AddRecordBtn_Click(object sender, EventArgs e)
         {
             if( _TbMonth.Text != "" && _TbDay.Text != "" && 
-                _TbNewNum1.Text != "" && _TbNewNum2.Text != "" && _TbNewNum3.Text != "" && _TbNewNum4.Text != "" &&
-                _TbNewNum5.Text != "" && _TbNewNum6.Text != "" && _TbNewNum7.Text != "")
+                _TbNewNum1.Text != "" && _TbNewNum2.Text != "" && _TbNewNum3.Text != "" && 
+                _TbNewNum4.Text != "" && _TbNewNum5.Text != "" && _TbNewNum6.Text != "" && 
+                _TbNewNum7.Text != "")
             {
                 string[] words = { 
                     AddZoreForStr(_TbMonth.Text),
@@ -211,7 +212,6 @@ namespace LuckyLottery
                 mRawData.Add(words);
 
                 ListViewItem lvi = new ListViewItem(words[0]);
-
                 lvi.SubItems.Add(words[1]);
                 lvi.SubItems.Add(words[2]);
                 lvi.SubItems.Add(words[3]);
@@ -225,13 +225,13 @@ namespace LuckyLottery
                 lvi.SubItems[0].BackColor = Color.Yellow;
                 lvi.SubItems[1].BackColor = Color.Yellow;
                 lvi.SubItems[8].BackColor = Color.LightGreen;
-
                 _LvRawData.Items.Add(lvi);
+
                 _BtnSaveFile.Enabled = true;
             }
         }
 
-        /////////////////////////////// add / minor Button
+        /////////////////////////////// add / minus Button
         private void _BtnDecrease_Click(object sender, EventArgs e)
         {
             int num1 =  Convert.ToInt32(_TbNumOne.Text);
@@ -265,13 +265,13 @@ namespace LuckyLottery
             if (_LvRawData.Items.Count > 0)
             {
                 DisplayListView(_LvRawData, mRawData, false);
+                _LvRawData.Items[_LvRawData.Items.Count - 1].EnsureVisible();
             }
 
             if (_LvResultData.Items.Count > 0)
             {
                 DisplayListView(_LvResultData, mQuestResult, false);
             }
-
         }
 
         private void _RbSize_CheckedChanged(object sender, EventArgs e)
@@ -279,6 +279,7 @@ namespace LuckyLottery
             if (_LvRawData.Items.Count > 0)
             {
                 DisplayListView(_LvRawData, mRawData, true);
+                _LvRawData.Items[_LvRawData.Items.Count - 1].EnsureVisible();
             }
 
             if (_LvResultData.Items.Count > 0)
@@ -287,7 +288,7 @@ namespace LuckyLottery
             }
         }
 
-        ///////////////////////////////
+        ///////////////////////////////  User Function
         private string AddZoreForStr(string str)
         {
             int num = Convert.ToInt32(str);

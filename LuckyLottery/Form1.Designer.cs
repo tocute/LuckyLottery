@@ -93,7 +93,7 @@
             this.columnHeader8,
             this.columnHeader9});
             this._LvRawData.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._LvRawData.Location = new System.Drawing.Point(91, 32);
+            this._LvRawData.Location = new System.Drawing.Point(91, 21);
             this._LvRawData.Name = "_LvRawData";
             this._LvRawData.Size = new System.Drawing.Size(385, 500);
             this._LvRawData.TabIndex = 0;
@@ -259,7 +259,7 @@
             // _BtnReadFile
             // 
             this._BtnReadFile.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnReadFile.Location = new System.Drawing.Point(482, 53);
+            this._BtnReadFile.Location = new System.Drawing.Point(485, 53);
             this._BtnReadFile.Name = "_BtnReadFile";
             this._BtnReadFile.Size = new System.Drawing.Size(36, 48);
             this._BtnReadFile.TabIndex = 16;
@@ -271,7 +271,7 @@
             // 
             this._BtnSaveFile.Enabled = false;
             this._BtnSaveFile.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnSaveFile.Location = new System.Drawing.Point(482, 135);
+            this._BtnSaveFile.Location = new System.Drawing.Point(485, 135);
             this._BtnSaveFile.Name = "_BtnSaveFile";
             this._BtnSaveFile.Size = new System.Drawing.Size(36, 48);
             this._BtnSaveFile.TabIndex = 17;
@@ -283,7 +283,7 @@
             // 
             this._BtnDeleteItem.Enabled = false;
             this._BtnDeleteItem.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnDeleteItem.Location = new System.Drawing.Point(482, 217);
+            this._BtnDeleteItem.Location = new System.Drawing.Point(485, 217);
             this._BtnDeleteItem.Name = "_BtnDeleteItem";
             this._BtnDeleteItem.Size = new System.Drawing.Size(36, 48);
             this._BtnDeleteItem.TabIndex = 18;
@@ -294,7 +294,7 @@
             // _BtnAddRecord
             // 
             this._BtnAddRecord.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnAddRecord.Location = new System.Drawing.Point(494, 541);
+            this._BtnAddRecord.Location = new System.Drawing.Point(494, 530);
             this._BtnAddRecord.Name = "_BtnAddRecord";
             this._BtnAddRecord.Size = new System.Drawing.Size(36, 48);
             this._BtnAddRecord.TabIndex = 35;
@@ -328,7 +328,7 @@
             this.columnHeader17,
             this.columnHeader18});
             this._LvResultData.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._LvResultData.Location = new System.Drawing.Point(532, 32);
+            this._LvResultData.Location = new System.Drawing.Point(532, 21);
             this._LvResultData.Name = "_LvResultData";
             this._LvResultData.Size = new System.Drawing.Size(385, 500);
             this._LvResultData.TabIndex = 21;
@@ -448,7 +448,7 @@
             // 
             this._LbResultDescr.AutoSize = true;
             this._LbResultDescr.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._LbResultDescr.Location = new System.Drawing.Point(536, 541);
+            this._LbResultDescr.Location = new System.Drawing.Point(536, 530);
             this._LbResultDescr.MaximumSize = new System.Drawing.Size(200, 0);
             this._LbResultDescr.Name = "_LbResultDescr";
             this._LbResultDescr.Size = new System.Drawing.Size(52, 21);
@@ -459,7 +459,7 @@
             // 
             this._LbResultPredict.AutoSize = true;
             this._LbResultPredict.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._LbResultPredict.Location = new System.Drawing.Point(766, 541);
+            this._LbResultPredict.Location = new System.Drawing.Point(769, 527);
             this._LbResultPredict.MaximumSize = new System.Drawing.Size(220, 0);
             this._LbResultPredict.Name = "_LbResultPredict";
             this._LbResultPredict.Size = new System.Drawing.Size(52, 21);
@@ -471,7 +471,7 @@
             // 
             this._BtnIncrease.Enabled = false;
             this._BtnIncrease.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnIncrease.Location = new System.Drawing.Point(737, 538);
+            this._BtnIncrease.Location = new System.Drawing.Point(740, 527);
             this._BtnIncrease.Name = "_BtnIncrease";
             this._BtnIncrease.Size = new System.Drawing.Size(26, 48);
             this._BtnIncrease.TabIndex = 30;
@@ -483,7 +483,7 @@
             // 
             this._BtnDecrease.Enabled = false;
             this._BtnDecrease.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnDecrease.Location = new System.Drawing.Point(706, 538);
+            this._BtnDecrease.Location = new System.Drawing.Point(708, 527);
             this._BtnDecrease.Name = "_BtnDecrease";
             this._BtnDecrease.Size = new System.Drawing.Size(26, 48);
             this._BtnDecrease.TabIndex = 31;
