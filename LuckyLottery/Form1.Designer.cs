@@ -43,7 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this._TbNumTwo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this._TbNumThree = new System.Windows.Forms.TextBox();
+            this._TbNumCount = new System.Windows.Forms.TextBox();
             this._TbNewNum2 = new System.Windows.Forms.TextBox();
             this._TbNewNum1 = new System.Windows.Forms.TextBox();
             this._TbNewNum6 = new System.Windows.Forms.TextBox();
@@ -76,6 +76,9 @@
             this._LbResultPredict = new System.Windows.Forms.Label();
             this._BtnIncrease = new System.Windows.Forms.Button();
             this._BtnDecrease = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this._TbNumThree = new System.Windows.Forms.TextBox();
+            this._BtnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // _LvRawData
@@ -93,22 +96,22 @@
             this.columnHeader8,
             this.columnHeader9});
             this._LvRawData.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._LvRawData.Location = new System.Drawing.Point(91, 21);
+            this._LvRawData.Location = new System.Drawing.Point(95, 21);
             this._LvRawData.Name = "_LvRawData";
-            this._LvRawData.Size = new System.Drawing.Size(385, 500);
+            this._LvRawData.Size = new System.Drawing.Size(388, 500);
             this._LvRawData.TabIndex = 0;
             this._LvRawData.UseCompatibleStateImageBehavior = false;
             this._LvRawData.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "月";
+            this.columnHeader1.Text = "年";
             this.columnHeader1.Width = 40;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "日";
-            this.columnHeader2.Width = 40;
+            this.columnHeader2.Text = "期";
+            this.columnHeader2.Width = 46;
             // 
             // columnHeader3
             // 
@@ -148,7 +151,7 @@
             // _TbNumOne
             // 
             this._TbNumOne.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbNumOne.Location = new System.Drawing.Point(18, 65);
+            this._TbNumOne.Location = new System.Drawing.Point(19, 53);
             this._TbNumOne.Name = "_TbNumOne";
             this._TbNumOne.Size = new System.Drawing.Size(40, 36);
             this._TbNumOne.TabIndex = 1;
@@ -157,7 +160,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(8, 32);
+            this.label1.Location = new System.Drawing.Point(8, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 21);
             this.label1.TabIndex = 2;
@@ -167,7 +170,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(7, 119);
+            this.label2.Location = new System.Drawing.Point(7, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 21);
             this.label2.TabIndex = 4;
@@ -176,7 +179,7 @@
             // _TbNumTwo
             // 
             this._TbNumTwo.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbNumTwo.Location = new System.Drawing.Point(18, 147);
+            this._TbNumTwo.Location = new System.Drawing.Point(18, 135);
             this._TbNumTwo.Name = "_TbNumTwo";
             this._TbNumTwo.Size = new System.Drawing.Size(40, 36);
             this._TbNumTwo.TabIndex = 3;
@@ -185,24 +188,24 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(8, 197);
+            this.label3.Location = new System.Drawing.Point(8, 269);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 21);
             this.label3.TabIndex = 6;
             this.label3.Text = "往下數";
             // 
-            // _TbNumThree
+            // _TbNumCount
             // 
-            this._TbNumThree.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbNumThree.Location = new System.Drawing.Point(18, 229);
-            this._TbNumThree.Name = "_TbNumThree";
-            this._TbNumThree.Size = new System.Drawing.Size(40, 36);
-            this._TbNumThree.TabIndex = 5;
+            this._TbNumCount.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._TbNumCount.Location = new System.Drawing.Point(18, 304);
+            this._TbNumCount.Name = "_TbNumCount";
+            this._TbNumCount.Size = new System.Drawing.Size(40, 36);
+            this._TbNumCount.TabIndex = 7;
             // 
             // _TbNewNum2
             // 
             this._TbNewNum2.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbNewNum2.Location = new System.Drawing.Point(207, 554);
+            this._TbNewNum2.Location = new System.Drawing.Point(207, 540);
             this._TbNewNum2.Name = "_TbNewNum2";
             this._TbNewNum2.Size = new System.Drawing.Size(40, 36);
             this._TbNewNum2.TabIndex = 29;
@@ -210,7 +213,7 @@
             // _TbNewNum1
             // 
             this._TbNewNum1.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbNewNum1.Location = new System.Drawing.Point(161, 554);
+            this._TbNewNum1.Location = new System.Drawing.Point(161, 540);
             this._TbNewNum1.Name = "_TbNewNum1";
             this._TbNewNum1.Size = new System.Drawing.Size(40, 36);
             this._TbNewNum1.TabIndex = 28;
@@ -218,7 +221,7 @@
             // _TbNewNum6
             // 
             this._TbNewNum6.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbNewNum6.Location = new System.Drawing.Point(391, 553);
+            this._TbNewNum6.Location = new System.Drawing.Point(391, 539);
             this._TbNewNum6.Name = "_TbNewNum6";
             this._TbNewNum6.Size = new System.Drawing.Size(40, 36);
             this._TbNewNum6.TabIndex = 33;
@@ -226,7 +229,7 @@
             // _TbNewNum5
             // 
             this._TbNewNum5.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbNewNum5.Location = new System.Drawing.Point(345, 554);
+            this._TbNewNum5.Location = new System.Drawing.Point(345, 540);
             this._TbNewNum5.Name = "_TbNewNum5";
             this._TbNewNum5.Size = new System.Drawing.Size(40, 36);
             this._TbNewNum5.TabIndex = 32;
@@ -234,7 +237,7 @@
             // _TbNewNum4
             // 
             this._TbNewNum4.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbNewNum4.Location = new System.Drawing.Point(299, 554);
+            this._TbNewNum4.Location = new System.Drawing.Point(299, 540);
             this._TbNewNum4.Name = "_TbNewNum4";
             this._TbNewNum4.Size = new System.Drawing.Size(40, 36);
             this._TbNewNum4.TabIndex = 31;
@@ -242,7 +245,7 @@
             // _TbNewNum3
             // 
             this._TbNewNum3.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbNewNum3.Location = new System.Drawing.Point(253, 554);
+            this._TbNewNum3.Location = new System.Drawing.Point(253, 540);
             this._TbNewNum3.Name = "_TbNewNum3";
             this._TbNewNum3.Size = new System.Drawing.Size(40, 36);
             this._TbNewNum3.TabIndex = 30;
@@ -251,7 +254,7 @@
             // 
             this._TbNewNum7.BackColor = System.Drawing.Color.LightGreen;
             this._TbNewNum7.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbNewNum7.Location = new System.Drawing.Point(437, 554);
+            this._TbNewNum7.Location = new System.Drawing.Point(437, 540);
             this._TbNewNum7.Name = "_TbNewNum7";
             this._TbNewNum7.Size = new System.Drawing.Size(40, 36);
             this._TbNewNum7.TabIndex = 34;
@@ -259,7 +262,7 @@
             // _BtnReadFile
             // 
             this._BtnReadFile.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnReadFile.Location = new System.Drawing.Point(485, 53);
+            this._BtnReadFile.Location = new System.Drawing.Point(489, 53);
             this._BtnReadFile.Name = "_BtnReadFile";
             this._BtnReadFile.Size = new System.Drawing.Size(36, 48);
             this._BtnReadFile.TabIndex = 16;
@@ -271,7 +274,7 @@
             // 
             this._BtnSaveFile.Enabled = false;
             this._BtnSaveFile.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnSaveFile.Location = new System.Drawing.Point(485, 135);
+            this._BtnSaveFile.Location = new System.Drawing.Point(489, 135);
             this._BtnSaveFile.Name = "_BtnSaveFile";
             this._BtnSaveFile.Size = new System.Drawing.Size(36, 48);
             this._BtnSaveFile.TabIndex = 17;
@@ -283,7 +286,7 @@
             // 
             this._BtnDeleteItem.Enabled = false;
             this._BtnDeleteItem.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnDeleteItem.Location = new System.Drawing.Point(485, 217);
+            this._BtnDeleteItem.Location = new System.Drawing.Point(489, 217);
             this._BtnDeleteItem.Name = "_BtnDeleteItem";
             this._BtnDeleteItem.Size = new System.Drawing.Size(36, 48);
             this._BtnDeleteItem.TabIndex = 18;
@@ -306,10 +309,10 @@
             // 
             this._BtnQuery.Enabled = false;
             this._BtnQuery.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnQuery.Location = new System.Drawing.Point(22, 283);
+            this._BtnQuery.Location = new System.Drawing.Point(10, 364);
             this._BtnQuery.Name = "_BtnQuery";
             this._BtnQuery.Size = new System.Drawing.Size(36, 48);
-            this._BtnQuery.TabIndex = 7;
+            this._BtnQuery.TabIndex = 8;
             this._BtnQuery.Text = "查";
             this._BtnQuery.UseVisualStyleBackColor = true;
             this._BtnQuery.Click += new System.EventHandler(this.QueryBtn_Click);
@@ -337,13 +340,13 @@
             // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "月";
+            this.columnHeader10.Text = "年";
             this.columnHeader10.Width = 40;
             // 
             // columnHeader11
             // 
-            this.columnHeader11.Text = "日";
-            this.columnHeader11.Width = 40;
+            this.columnHeader11.Text = "期";
+            this.columnHeader11.Width = 47;
             // 
             // columnHeader12
             // 
@@ -405,7 +408,7 @@
             this._RbOrder.AutoSize = true;
             this._RbOrder.Checked = true;
             this._RbOrder.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._RbOrder.Location = new System.Drawing.Point(10, 367);
+            this._RbOrder.Location = new System.Drawing.Point(10, 461);
             this._RbOrder.Name = "_RbOrder";
             this._RbOrder.Size = new System.Drawing.Size(70, 25);
             this._RbOrder.TabIndex = 24;
@@ -418,7 +421,7 @@
             // 
             this._RbSize.AutoSize = true;
             this._RbSize.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._RbSize.Location = new System.Drawing.Point(10, 398);
+            this._RbSize.Location = new System.Drawing.Point(10, 492);
             this._RbSize.Name = "_RbSize";
             this._RbSize.Size = new System.Drawing.Size(70, 25);
             this._RbSize.TabIndex = 25;
@@ -430,7 +433,7 @@
             // 
             this._TbDay.BackColor = System.Drawing.Color.Yellow;
             this._TbDay.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbDay.Location = new System.Drawing.Point(115, 553);
+            this._TbDay.Location = new System.Drawing.Point(115, 539);
             this._TbDay.Name = "_TbDay";
             this._TbDay.Size = new System.Drawing.Size(40, 36);
             this._TbDay.TabIndex = 27;
@@ -439,7 +442,7 @@
             // 
             this._TbMonth.BackColor = System.Drawing.Color.Yellow;
             this._TbMonth.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._TbMonth.Location = new System.Drawing.Point(69, 553);
+            this._TbMonth.Location = new System.Drawing.Point(69, 539);
             this._TbMonth.Name = "_TbMonth";
             this._TbMonth.Size = new System.Drawing.Size(40, 36);
             this._TbMonth.TabIndex = 26;
@@ -448,7 +451,7 @@
             // 
             this._LbResultDescr.AutoSize = true;
             this._LbResultDescr.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._LbResultDescr.Location = new System.Drawing.Point(536, 530);
+            this._LbResultDescr.Location = new System.Drawing.Point(536, 524);
             this._LbResultDescr.MaximumSize = new System.Drawing.Size(200, 0);
             this._LbResultDescr.Name = "_LbResultDescr";
             this._LbResultDescr.Size = new System.Drawing.Size(52, 21);
@@ -459,7 +462,7 @@
             // 
             this._LbResultPredict.AutoSize = true;
             this._LbResultPredict.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._LbResultPredict.Location = new System.Drawing.Point(769, 527);
+            this._LbResultPredict.Location = new System.Drawing.Point(770, 524);
             this._LbResultPredict.MaximumSize = new System.Drawing.Size(220, 0);
             this._LbResultPredict.Name = "_LbResultPredict";
             this._LbResultPredict.Size = new System.Drawing.Size(52, 21);
@@ -471,10 +474,10 @@
             // 
             this._BtnIncrease.Enabled = false;
             this._BtnIncrease.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnIncrease.Location = new System.Drawing.Point(740, 527);
+            this._BtnIncrease.Location = new System.Drawing.Point(744, 527);
             this._BtnIncrease.Name = "_BtnIncrease";
             this._BtnIncrease.Size = new System.Drawing.Size(26, 48);
-            this._BtnIncrease.TabIndex = 30;
+            this._BtnIncrease.TabIndex = 41;
             this._BtnIncrease.Text = ">";
             this._BtnIncrease.UseVisualStyleBackColor = true;
             this._BtnIncrease.Click += new System.EventHandler(this._BtnIncrease_Click);
@@ -483,19 +486,52 @@
             // 
             this._BtnDecrease.Enabled = false;
             this._BtnDecrease.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._BtnDecrease.Location = new System.Drawing.Point(708, 527);
+            this._BtnDecrease.Location = new System.Drawing.Point(715, 527);
             this._BtnDecrease.Name = "_BtnDecrease";
             this._BtnDecrease.Size = new System.Drawing.Size(26, 48);
-            this._BtnDecrease.TabIndex = 31;
+            this._BtnDecrease.TabIndex = 40;
             this._BtnDecrease.Text = "<";
             this._BtnDecrease.UseVisualStyleBackColor = true;
             this._BtnDecrease.Click += new System.EventHandler(this._BtnDecrease_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.Location = new System.Drawing.Point(8, 183);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 21);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "數字三";
+            // 
+            // _TbNumThree
+            // 
+            this._TbNumThree.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._TbNumThree.Location = new System.Drawing.Point(19, 217);
+            this._TbNumThree.Name = "_TbNumThree";
+            this._TbNumThree.Size = new System.Drawing.Size(40, 36);
+            this._TbNumThree.TabIndex = 5;
+            // 
+            // _BtnClear
+            // 
+            this._BtnClear.Enabled = false;
+            this._BtnClear.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._BtnClear.Location = new System.Drawing.Point(49, 364);
+            this._BtnClear.Name = "_BtnClear";
+            this._BtnClear.Size = new System.Drawing.Size(36, 48);
+            this._BtnClear.TabIndex = 42;
+            this._BtnClear.Text = "清";
+            this._BtnClear.UseVisualStyleBackColor = true;
+            this._BtnClear.Click += new System.EventHandler(this._BtnClear_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 601);
+            this.Controls.Add(this._BtnClear);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this._TbNumThree);
             this.Controls.Add(this._BtnDecrease);
             this.Controls.Add(this._BtnIncrease);
             this.Controls.Add(this._LbResultPredict);
@@ -520,7 +556,7 @@
             this.Controls.Add(this._TbNewNum2);
             this.Controls.Add(this._TbNewNum1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this._TbNumThree);
+            this.Controls.Add(this._TbNumCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this._TbNumTwo);
             this.Controls.Add(this.label1);
@@ -542,7 +578,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox _TbNumTwo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox _TbNumThree;
+        private System.Windows.Forms.TextBox _TbNumCount;
         private System.Windows.Forms.TextBox _TbNewNum2;
         private System.Windows.Forms.TextBox _TbNewNum1;
         private System.Windows.Forms.TextBox _TbNewNum6;
@@ -584,6 +620,9 @@
         private System.Windows.Forms.Label _LbResultPredict;
         private System.Windows.Forms.Button _BtnIncrease;
         private System.Windows.Forms.Button _BtnDecrease;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox _TbNumThree;
+        private System.Windows.Forms.Button _BtnClear;
 
     }
 }

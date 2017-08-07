@@ -56,6 +56,7 @@ namespace LuckyLottery
 
                 // Enable button
                 _BtnQuery.Enabled = true;
+                _BtnClear.Enabled = true;
                 _BtnSaveFile.Enabled = false;
                 _BtnDeleteItem.Enabled = true;
                 _BtnColored.Enabled = false;
@@ -92,7 +93,7 @@ namespace LuckyLottery
 
         private void QueryBtn_Click(object sender, EventArgs e)
         {
-            if (_TbNumOne.Text != "" && _TbNumTwo.Text != "" && _TbNumThree.Text != "")
+            if (_TbNumOne.Text != "" && _TbNumTwo.Text != "" && _TbNumCount.Text != "")
             { 
                 _LvResultData.Items.Clear();
                 mQuestResult.Clear();
@@ -114,16 +115,26 @@ namespace LuckyLottery
                     //тㄢ计常Τ瞷魁
                     if (Array.IndexOf(num_data, Convert.ToInt32(_TbNumOne.Text)) != -1 && Array.IndexOf(num_data,  Convert.ToInt32(_TbNumTwo.Text)) != -1)
                     {
-                        int down_count = Convert.ToInt32(_TbNumThree.Text);
-                        if (down_count + i < list_size)
+                        Boolean is_include_num_three = true;
+                        if (_TbNumThree.Text != "")
                         {
-                            string[] words = (string[])mRawData[i + down_count];
-                            mQuestResult.Add(words);
-
-                            for (int j = 2; j < 9; j++)
+                            int num_three = Convert.ToInt32(_TbNumThree.Text);
+                            if (num_three > 0 && Array.IndexOf(num_data, num_three) == -1)
+                                is_include_num_three = false;
+                        }
+                        if (is_include_num_three)
+                        {
+                            int down_count = Convert.ToInt32(_TbNumCount.Text);
+                            if (down_count + i < list_size)
                             {
-                                int index = Int32.Parse(words[j]);
-                                statistics[index]++;
+                                string[] words = (string[])mRawData[i + down_count];
+                                mQuestResult.Add(words);
+
+                                for (int j = 2; j < 9; j++)
+                                {
+                                    int index = Int32.Parse(words[j]);
+                                    statistics[index]++;
+                                }
                             }
                         }
                     }
@@ -158,23 +169,42 @@ namespace LuckyLottery
                 _BtnDecrease.Enabled = true;
                 _BtnIncrease.Enabled = true;
 
-                _LbResultDescr.Text = "计 " + _TbNumOne.Text + "  计 " + _TbNumTwo.Text + "\n┕计" + _TbNumThree.Text+"";
+
+                _LbResultDescr.Text = "计 " + _TbNumOne.Text + "  计 " + _TbNumTwo.Text +
+                    "\n计 " + _TbNumThree.Text + "\n┕计" + _TbNumCount.Text + "";
+
                 _LbResultPredict.Text = _LvResultData.Items.Count.ToString() + "Ωい瞷程玡ㄢ\n" + 
                     major_index.ToString() + "瞷 " + major_value.ToString() + "Ω\n" + 
                     minor_index.ToString() + "瞷 " + minor_value.ToString() + "Ω";
             }
         }
 
+        private void _BtnClear_Click(object sender, EventArgs e)
+        {
+            mQuestResult.Clear(); 
+            
+            _LvResultData.Items.Clear();
+            
+            _TbNumOne.Clear();
+            _TbNumTwo.Clear();
+            _TbNumThree.Clear(); 
+            _TbNumCount.Clear();
+
+            _BtnDecrease.Enabled = false;
+            _BtnIncrease.Enabled = false;
+        }
+
         private void ColoredBtn_Click(object sender, EventArgs e)
         {
-            if (_TbColoredNum.Text != "")
+            int color_num = 0;
+            if (_TbColoredNum.Text != "" && int.TryParse(_TbColoredNum.Text, out color_num))
             { 
                 for (int i = 0; i < _LvResultData.Items.Count; i++)
                 {
                     ListViewItem item = _LvResultData.Items[i];
                     for(int j=2; j<8; j++)
                     {
-                        int color_num = Convert.ToInt32(_TbColoredNum.Text);
+                        
                         int search_num = Convert.ToInt32(item.SubItems[j].Text);
 
                         if (color_num == search_num)
@@ -226,6 +256,7 @@ namespace LuckyLottery
                 lvi.SubItems[1].BackColor = Color.Yellow;
                 lvi.SubItems[8].BackColor = Color.LightGreen;
                 _LvRawData.Items.Add(lvi);
+                _LvRawData.Items[_LvRawData.Items.Count - 1].EnsureVisible();
 
                 _BtnSaveFile.Enabled = true;
             }
@@ -236,11 +267,11 @@ namespace LuckyLottery
         {
             int num1 =  Convert.ToInt32(_TbNumOne.Text);
             int num2 =  Convert.ToInt32(_TbNumTwo.Text);
-            int down_count = Convert.ToInt32(_TbNumThree.Text);
+            int down_count = Convert.ToInt32(_TbNumCount.Text);
             if (down_count > 1 && _LvResultData.Items.Count > 0)
-            { 
-                int new_num3 = down_count - 1;
-                _TbNumThree.Text = new_num3.ToString();
+            {
+                int new_down_count = down_count - 1;
+                _TbNumCount.Text = new_down_count.ToString();
                 QueryBtn_Click(null, null);
             }
 
@@ -250,11 +281,11 @@ namespace LuckyLottery
         {
             int num1 = Convert.ToInt32(_TbNumOne.Text);
             int num2 = Convert.ToInt32(_TbNumTwo.Text);
-            int down_count = Convert.ToInt32(_TbNumThree.Text);
+            int down_count = Convert.ToInt32(_TbNumCount.Text);
             if (_LvResultData.Items.Count > 0)
             {
-                int new_num3 = down_count + 1;
-                _TbNumThree.Text = new_num3.ToString();
+                int new_down_count = down_count + 1;
+                _TbNumCount.Text = new_down_count.ToString();
                 QueryBtn_Click(null, null);
             }
         }
@@ -291,11 +322,12 @@ namespace LuckyLottery
         ///////////////////////////////  User Function
         private string AddZoreForStr(string str)
         {
-            int num = Convert.ToInt32(str);
+            return str.PadLeft(2, '0');
+            /*num = Convert.ToInt32(str);
             if (num < 10)
                 return "0" + str;
             else
-                return str;
+                return str;*/
         }
 
         private void DisplayListView(ListView lW, ArrayList rawData, bool by_size)
@@ -335,5 +367,7 @@ namespace LuckyLottery
                 lW.Items.Add(lvi);
             }
         }
+
+
     }
 }
