@@ -62,6 +62,8 @@ namespace LuckyLottery
                 _BtnColored.Enabled = false;
                 _BtnDecrease.Enabled = false;
                 _BtnIncrease.Enabled = false;
+
+                PastStatistics();
             }
         }
 
@@ -366,6 +368,62 @@ namespace LuckyLottery
 
                 lW.Items.Add(lvi);
             }
+        }
+
+
+        private void PastStatistics()
+        {
+            int search_year = DateTime.Now.Year - 2003;
+
+            int list_size = mRawData.Count;
+            int[] statistics = new int[50];
+            for (int i = 0; i < statistics.Length; i++)
+                statistics[i] = 0;
+            
+            for (int i = 0; i < list_size; i++)
+            {
+                int[] num_data = new int[9];
+                string[] words2 = (string[])mRawData[i];
+                for (int j = 0; j < num_data.Length; j++)
+                {
+                    num_data[j] = Convert.ToInt32(words2[j]);
+                }
+
+                if (num_data[0] >= search_year)
+                {
+                    for (int j = 2; j < 9; j++)
+                    {
+                        int index = num_data[j];
+                        statistics[index]++;
+                    }
+                    
+                }
+            }
+
+            string[] result = new string[8];
+            for (int j = 0; j < result.Length; j++)
+            {
+                int major_index = -1;
+                int major_value = 0;
+                for (int i = 0; i < statistics.Length; i++)
+                {
+                    if (major_value < statistics[i])
+                    {
+                        major_value = statistics[i];
+                        major_index = i;
+                    }
+                }
+                result[j] = major_index.ToString() + "--" + major_value.ToString() + "次";
+                statistics[major_index] = -1;
+            }
+
+            string temp = "";
+            for (int j = 0; j < result.Length; j++)
+            {
+                temp += result[j] + ",  ";
+            }
+
+            _LbPastStatistics.Text = "過去三年的前八名    " + temp;
         }
 
 

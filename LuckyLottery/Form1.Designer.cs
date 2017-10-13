@@ -79,6 +79,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this._TbNumThree = new System.Windows.Forms.TextBox();
             this._BtnClear = new System.Windows.Forms.Button();
+            this._LbPastStatistics = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // _LvRawData
@@ -98,7 +99,7 @@
             this._LvRawData.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._LvRawData.Location = new System.Drawing.Point(95, 21);
             this._LvRawData.Name = "_LvRawData";
-            this._LvRawData.Size = new System.Drawing.Size(388, 500);
+            this._LvRawData.Size = new System.Drawing.Size(388, 450);
             this._LvRawData.TabIndex = 0;
             this._LvRawData.UseCompatibleStateImageBehavior = false;
             this._LvRawData.View = System.Windows.Forms.View.Details;
@@ -408,7 +409,7 @@
             this._RbOrder.AutoSize = true;
             this._RbOrder.Checked = true;
             this._RbOrder.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._RbOrder.Location = new System.Drawing.Point(10, 461);
+            this._RbOrder.Location = new System.Drawing.Point(10, 470);
             this._RbOrder.Name = "_RbOrder";
             this._RbOrder.Size = new System.Drawing.Size(70, 25);
             this._RbOrder.TabIndex = 24;
@@ -421,7 +422,7 @@
             // 
             this._RbSize.AutoSize = true;
             this._RbSize.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._RbSize.Location = new System.Drawing.Point(10, 492);
+            this._RbSize.Location = new System.Drawing.Point(10, 501);
             this._RbSize.Name = "_RbSize";
             this._RbSize.Size = new System.Drawing.Size(70, 25);
             this._RbSize.TabIndex = 25;
@@ -524,11 +525,24 @@
             this._BtnClear.UseVisualStyleBackColor = true;
             this._BtnClear.Click += new System.EventHandler(this._BtnClear_Click);
             // 
+            // _LbPastStatistics
+            // 
+            this._LbPastStatistics.AutoSize = true;
+            this._LbPastStatistics.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._LbPastStatistics.Location = new System.Drawing.Point(91, 473);
+            this._LbPastStatistics.MaximumSize = new System.Drawing.Size(420, 0);
+            this._LbPastStatistics.Name = "_LbPastStatistics";
+            this._LbPastStatistics.Size = new System.Drawing.Size(52, 21);
+            this._LbPastStatistics.TabIndex = 43;
+            this._LbPastStatistics.Tag = "";
+            this._LbPastStatistics.Text = "統計";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 601);
+            this.Controls.Add(this._LbPastStatistics);
             this.Controls.Add(this._BtnClear);
             this.Controls.Add(this.label4);
             this.Controls.Add(this._TbNumThree);
@@ -623,6 +637,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox _TbNumThree;
         private System.Windows.Forms.Button _BtnClear;
+        private System.Windows.Forms.Label _LbPastStatistics;
 
     }
 }
